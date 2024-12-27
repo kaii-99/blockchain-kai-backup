@@ -5,6 +5,7 @@ go 1.22.7
 toolchain go1.23.4
 
 replace (
+	github.com/cosmos/cosmos-sdk => cosmossdk.io v0.50.11
 	// fix upstream GHSA-h395-qcrw-5vmq vulnerability.
 	github.com/gin-gonic/gin => github.com/gin-gonic/gin v1.7.0
 	// replace broken goleveldb
@@ -13,8 +14,8 @@ replace (
 
 require (
 	cosmossdk.io/api v0.7.6
-	cosmossdk.io/client/v2 v2.0.0-beta.5
-	cosmossdk.io/core v0.11.1
+	cosmossdk.io/client/v2 v2.0.0-beta.3
+	cosmossdk.io/core v0.12.0
 	cosmossdk.io/depinject v1.1.0
 	cosmossdk.io/errors v1.0.1
 	cosmossdk.io/log v1.4.1
@@ -24,7 +25,7 @@ require (
 	cosmossdk.io/x/circuit v0.1.1
 	cosmossdk.io/x/evidence v0.1.1
 	cosmossdk.io/x/feegrant v0.1.1
-	cosmossdk.io/x/nft v0.1.0
+	cosmossdk.io/x/nft v0.1.1
 	cosmossdk.io/x/upgrade v0.1.4
 	github.com/bufbuild/buf v1.34.0
 	github.com/cometbft/cometbft v0.38.12

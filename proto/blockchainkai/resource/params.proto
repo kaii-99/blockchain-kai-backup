@@ -1,0 +1,15 @@
+syntax = "proto3";
+package blockchainkai.resource;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/kaii-99/blockchain-kai/x/resource/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (amino.name) = "blockchainkai/x/resource/Params";
+  option (gogoproto.equal) = true;
+
+  
+}

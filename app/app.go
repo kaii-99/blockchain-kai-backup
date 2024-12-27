@@ -76,6 +76,8 @@ import (
 	ibckeeper "github.com/cosmos/ibc-go/v8/modules/core/keeper"
 
 	blockchainkaimodulekeeper "github.com/kaii-99/blockchain-kai/x/blockchainkai/keeper"
+	resourcemodulekeeper "github.com/kaii-99/blockchain-kai/x/resource/keeper"
+
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 
 	"github.com/kaii-99/blockchain-kai/docs"
@@ -142,6 +144,7 @@ type App struct {
 	ScopedKeepers             map[string]capabilitykeeper.ScopedKeeper
 
 	BlockchainkaiKeeper blockchainkaimodulekeeper.Keeper
+	ResourceKeeper      resourcemodulekeeper.Keeper
 	// this line is used by starport scaffolding # stargate/app/keeperDeclaration
 
 	// simulation manager
@@ -246,6 +249,7 @@ func New(
 		&app.GroupKeeper,
 		&app.CircuitBreakerKeeper,
 		&app.BlockchainkaiKeeper,
+		&app.ResourceKeeper,
 		// this line is used by starport scaffolding # stargate/app/keeperDefinition
 	); err != nil {
 		panic(err)

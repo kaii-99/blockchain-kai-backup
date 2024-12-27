@@ -54,8 +54,11 @@ import (
 	"google.golang.org/protobuf/types/known/durationpb"
 
 	blockchainkaimodulev1 "github.com/kaii-99/blockchain-kai/api/blockchainkai/blockchainkai/module"
+	resourcemodulev1 "github.com/kaii-99/blockchain-kai/api/blockchainkai/resource/module"
 	_ "github.com/kaii-99/blockchain-kai/x/blockchainkai/module" // import for side-effects
 	blockchainkaimoduletypes "github.com/kaii-99/blockchain-kai/x/blockchainkai/types"
+	_ "github.com/kaii-99/blockchain-kai/x/resource/module" // import for side-effects
+	resourcemoduletypes "github.com/kaii-99/blockchain-kai/x/resource/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 )
 
@@ -94,6 +97,7 @@ var (
 		circuittypes.ModuleName,
 		// chain modules
 		blockchainkaimoduletypes.ModuleName,
+		resourcemoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/initGenesis
 	}
 
@@ -119,6 +123,7 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		blockchainkaimoduletypes.ModuleName,
+		resourcemoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/beginBlockers
 	}
 
@@ -138,6 +143,7 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		blockchainkaimoduletypes.ModuleName,
+		resourcemoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/endBlockers
 	}
 
@@ -296,6 +302,10 @@ var (
 			{
 				Name:   blockchainkaimoduletypes.ModuleName,
 				Config: appconfig.WrapAny(&blockchainkaimodulev1.Module{}),
+			},
+			{
+				Name:   resourcemoduletypes.ModuleName,
+				Config: appconfig.WrapAny(&resourcemodulev1.Module{}),
 			},
 			// this line is used by starport scaffolding # stargate/app/moduleConfig
 		},
